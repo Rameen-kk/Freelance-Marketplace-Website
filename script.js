@@ -1,9 +1,13 @@
+// Day 1: Mobile Menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+
 // Day 2: Search Functionality UI
 const searchInput = document.getElementById('searchInput');
 const serviceItems = document.querySelectorAll('.service-item');
@@ -103,4 +107,4 @@ window.addEventListener('load', () => {
         const targetBtn = document.querySelector(`.filter-btn[data-category="${categoryQuery}"]`);
         if (targetBtn) targetBtn.click();
     }
-    });
+});
