@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Services - SkillGrid</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Same Navbar as Day 1 -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-layer-group"></i>
+                <span>SkillGrid</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Browse Jobs</a></li>
+                <li><a href="#">Find Talent</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Services Page Header -->
+    <section class="page-header">
+        <h1>Browse All Services</h1>
+        <p>Find the perfect freelancer for your next project</p>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="filters-container">
+        <!-- Search Bar UI -->
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search for any service...">
+        </div>
+
+        <!-- Category Filter UI -->
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="web-dev">Web Development</button>
+            <button class="filter-btn" data-category="graphic-design">Graphic Design</button>
+            <button class="filter-btn" data-category="writing">Writing</button>
+            <button class="filter-btn" data-category="marketing">Marketing</button>
+            <button class="filter-btn" data-category="video-editing">Video Editing</button>
+            <button class="filter-btn" data-category="programming">Programming</button>
+        </div>
+    </section>
+
+    <!-- Service Listing Section - 12 Services -->
+    <section class="services-listing">
+        <div class="services-grid" id="servicesGrid">
+            <!-- Card 1 -->
+            <div class="service-item" data-category="web-dev" data-title="wordpress website">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Service">
+                    <span class="price-tag">$150</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will create a WordPress Website</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Ali Khan</p>
+                    <p class="description">Professional responsive WordPress site with 5 pages, SEO optimized.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.9 (120)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-item" data-category="graphic-design" data-title="logo design">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500" alt="Service">
+                    <span class="price-tag">$80</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will design a Modern Logo</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Sara Ahmed</p>
+                    <p class="description">Unique logo design with 3 concepts + unlimited revisions.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 5.0 (89)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-item" data-category="writing" data-title="blog article writing">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500" alt="Service">
+                    <span class="price-tag">$50</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will write SEO Blog Articles</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Fatima Noor</p>
+                    <p class="description">1000 words SEO optimized article with keyword research included.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.8 (210)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-item" data-category="marketing" data-title="social media marketing">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500" alt="Service">
+                    <span class="price-tag">$200</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will manage Social Media Marketing</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Hassan Raza</p>
+                    <p class="description">30 posts per month for Instagram + Facebook with strategy.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.7 (65)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-item" data-category="video-editing" data-title="youtube video editing">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500" alt="Service">
+                    <span class="price-tag">$120</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will edit YouTube Videos</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Ahmed Ali</p>
+                    <p class="description">Professional editing with effects, transitions, color grading.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.9 (340)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-item" data-category="programming" data-title="python automation script">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500" alt="Service">
+                    <span class="price-tag">$250</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will write Python Automation Scripts</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Bilal Shah</p>
+                    <p class="description">Custom Python scripts to automate your daily business tasks.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 5.0 (42)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="service-item" data-category="web-dev" data-title="react website">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500" alt="Service">
+                    <span class="price-tag">$400</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will build a React.js Website</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Zain Malik</p>
+                    <p class="description">Modern single-page application with API integration.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.8 (55)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="service-item" data-category="graphic-design" data-title="social media post design">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500" alt="Service">
+                    <span class="price-tag">$60</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will design Social Media Posts</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Ayesha Khan</p>
+                    <p class="description">Pack of 10 custom Instagram/Facebook post designs.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.9 (178)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="service-item" data-category="writing" data-title="website copywriting">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?w=500" alt="Service">
+                    <span class="price-tag">$100</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will write Website Copy</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Omar Farooq</p>
+                    <p class="description">Compelling copy for homepage, about us, and services pages.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.7 (92)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="service-item" data-category="marketing" data-title="google ads campaign">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Service">
+                    <span class="price-tag">$300</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will setup Google Ads Campaign</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Usman Tariq</p>
+                    <p class="description">Complete Google Ads setup with keyword research & optimization.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.9 (76)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="service-item" data-category="video-editing" data-title="wedding video editing">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500" alt="Service">
+                    <span class="price-tag">$350</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will edit Wedding Videos</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Sana Sheikh</p>
+                    <p class="description">Cinematic wedding highlight video with color grading & music.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 5.0 (115)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="service-item" data-category="programming" data-title="mobile app development">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500" alt="Service">
+                    <span class="price-tag">$800</span>
+                </div>
+                <div class="service-details">
+                    <h3>I will develop Flutter Mobile App</h3>
+                    <p class="freelancer"><i class="fas fa-user"></i> by Kamran Ali</p>
+                    <p class="description">Cross-platform Android + iOS app with Firebase backend.</p>
+                    <div class="service-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.8 (31)</span>
+                        <button class="btn-contact">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same Footer as Day 1 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3><i class="fas fa-layer-group"></i> SkillGrid</h3>
+                <p>World's best freelance marketplace for businesses and talent.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#">Blog</a>
+                <a href="#">Help Center</a>
+                <a href="#">Guides</a>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SkillGrid. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
