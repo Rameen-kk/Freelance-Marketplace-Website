@@ -50,3 +50,45 @@ filterBtns.forEach(btn => {
         if (searchInput) searchInput.value = '';
     });
 });
+// Home Page Search Functionality
+const homeSearchBtn = document.getElementById('homeSearchBtn');
+const homeSearchInput = document.getElementById('homeSearchInput');
+
+if (homeSearchBtn && homeSearchInput) {
+    // Search button click pe services page pe bhejo
+    homeSearchBtn.addEventListener('click', () => {
+        const query = homeSearchInput.value.trim();
+        if (query) {
+            window.location.href = `services.html?search=${encodeURIComponent(query)}`;
+        } else {
+            window.location.href = 'services.html';
+        }
+    });
+
+    // Enter key se bhi search chale
+    homeSearchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            homeSearchBtn.click();
+        }
+    });
+}
+
+// Popular tags clickable banao
+const popularTags = document.querySelectorAll('.popular-tags a');
+popularTags.forEach(tag => {
+    tag.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = tag.dataset.category;
+        window.location.href = `services.html?category=${category}`;
+    });
+});
+
+// Service cards clickable banao
+const homeServiceCards = document.querySelectorAll('.service-card');
+homeServiceCards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+        const category = card.dataset.category;
+        window.location.href = `services.html?category=${category}`;
+    });
+});
