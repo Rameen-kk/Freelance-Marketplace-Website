@@ -2,9 +2,11 @@
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
 
 // Day 2: Search Functionality UI
 const searchInput = document.getElementById('searchInput');
@@ -50,12 +52,12 @@ filterBtns.forEach(btn => {
         if (searchInput) searchInput.value = '';
     });
 });
+
 // Home Page Search Functionality
 const homeSearchBtn = document.getElementById('homeSearchBtn');
 const homeSearchInput = document.getElementById('homeSearchInput');
 
 if (homeSearchBtn && homeSearchInput) {
-    // Search button click pe services page pe bhejo
     homeSearchBtn.addEventListener('click', () => {
         const query = homeSearchInput.value.trim();
         if (query) {
@@ -65,7 +67,6 @@ if (homeSearchBtn && homeSearchInput) {
         }
     });
 
-    // Enter key se bhi search chale
     homeSearchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             homeSearchBtn.click();
@@ -91,4 +92,46 @@ homeServiceCards.forEach(card => {
         const category = card.dataset.category;
         window.location.href = `services.html?category=${category}`;
     });
+});
+
+// Auto search/filter on page load from URL - YE WALA CODE
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+    const categoryQuery = urlParams.get('category');
+    
+    const searchInput = document.getElementById('searchInput');
+    const serviceItems = document.querySelectorAll('.service-item');
+    
+    // Agar search query hai to auto search karo
+    if (searchQuery && searchInput) {
+        searchInput.value = searchQuery;
+        serviceItems.forEach(item => {
+            const title = item.dataset.title.toLowerCase();
+            if (title.includes(searchQuery.toLowerCase())) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    
+    // Agar category query hai to auto filter karo
+    if (categoryQuery) {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.category === categoryQuery) {
+                btn.classList.add('active');
+            }
+        });
+        
+        serviceItems.forEach(item => {
+            if (item.dataset.category === categoryQuery) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
 });
