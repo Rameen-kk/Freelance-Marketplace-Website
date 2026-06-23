@@ -1,18 +1,20 @@
-:root {
-    --primary: #1dbf73;
-    --dark: #404145;
-    --light: #f5f5f5;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --gray: #64748b;
 }
 
 body {
-    background-color: white;
+    background: var(--light);
     color: var(--dark);
 }
 
@@ -26,27 +28,32 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .nav-links {
     display: flex;
+    list-style: none;
     gap: 2rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--dark);
-    font-weight: 600;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-.nav-links a:hover, .nav-links .active {
+.nav-links a:hover {
     color: var(--primary);
 }
 
@@ -57,21 +64,24 @@ body {
 
 .btn-login, .btn-signup {
     padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    font-weight: 600;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 .btn-login {
     background: transparent;
-    border: 1px solid var(--dark);
-    color: var(--dark);
+    color: var(--primary);
 }
 
 .btn-signup {
     background: var(--primary);
-    border: none;
     color: white;
+}
+
+.btn-signup:hover {
+    background: var(--primary-dark);
 }
 
 .hamburger {
@@ -85,110 +95,111 @@ body {
     display: flex;
     align-items: center;
     padding: 4rem 5%;
-    gap: 3rem;
+    gap: 2rem;
     min-height: 80vh;
-    flex-wrap: nowrap;
 }
 
 .hero-content {
     flex: 1;
-    min-width: 400px;
 }
 
 .hero-content h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
     line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 .hero-content h1 span {
     color: var(--primary);
 }
 
+.hero-content p {
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
 .search-bar {
     display: flex;
-    max-width: 600px;
+    max-width: 500px;
     margin-bottom: 1rem;
 }
 
 .search-bar input {
     flex: 1;
     padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    font-size: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px 0 0 8px;
+    outline: none;
 }
 
 .search-bar button {
-    padding: 0 1.5rem;
+    padding: 1rem 1.5rem;
     background: var(--primary);
     color: white;
     border: none;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 8px 8px 0;
     cursor: pointer;
-    font-weight: 600;
 }
 
-.popular-tags {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
+.popular-tags span {
+    font-weight: 600;
+    margin-right: 10px;
 }
 
 .popular-tags a {
-    color: var(--primary);
     text-decoration: none;
-    font-weight: 600;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-right: 8px;
+    font-size: 0.9rem;
 }
 
 .hero-image {
     flex: 1;
-    max-width: 600px;
 }
 
 .hero-image img {
     width: 100%;
     border-radius: 16px;
-    object-fit: cover;
 }
 
-/* Popular Services */
-.popular-services {
+/* Services Section */
+.services {
     padding: 4rem 5%;
-    background: var(--light);
+    background: white;
 }
 
-.popular-services h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.services h2 {
     text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
 .service-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #e2e8f0;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.15);
 }
 
 .service-card img {
     width: 60px;
-    height: 60px;
     margin-bottom: 1rem;
 }
 
@@ -197,141 +208,59 @@ body {
 }
 
 .service-card p {
-    color: #666;
+    color: var(--gray);
     font-size: 0.9rem;
 }
 
-/* Day 2: Services Page Styles */
-.services-page {
-    padding: 2rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 5% 1rem;
 }
 
-.page-header {
-    text-align: center;
-    margin-bottom: 3rem;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.page-header h1 {
-    font-size: 2.5rem;
-    color: var(--dark);
-    margin-bottom: 0.5rem;
-}
-
-.search-container {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-
-.filters-container {
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.filters-container h3 {
+.footer-col h3, .footer-col h4 {
     margin-bottom: 1rem;
-    color: var(--dark);
 }
 
-.category-filters {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+.footer-col a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
-.filter-btn {
-    padding: 0.6rem 1.2rem;
-    border: 2px solid var(--primary);
-    background: white;
-    color: var(--primary);
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 600;
-}
-
-.filter-btn:hover, .filter-btn.active {
-    background: var(--primary);
+.footer-col a:hover {
     color: white;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-item {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.service-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.service-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.service-content {
-    padding: 1.5rem;
-}
-
-.service-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark);
-}
-
-.freelancer-name {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-}
-
-.service-desc {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.service-footer {
+.social-icons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    gap: 1rem;
 }
 
-.price {
-    font-weight: 700;
-    color: var(--primary);
-    font-size: 1.1rem;
+.social-icons a {
+    font-size: 1.2rem;
 }
 
-.rating {
-    color: #ffa500;
-    font-weight: 600;
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .nav-links, .nav-buttons {
         display: none;
     }
@@ -356,11 +285,6 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 2rem 5%;
-        min-height: auto;
-    }
-    
-    .hero-content {
-        min-width: auto;
     }
     
     .hero-content h1 {
@@ -369,7 +293,6 @@ body {
     
     .search-bar {
         flex-direction: column;
-        margin: 0 auto;
     }
     
     .search-bar input, .search-bar button {
@@ -379,28 +302,5 @@ body {
     
     .search-bar button {
         margin-top: 0.5rem;
-    }
-    
-    .hero-image {
-        max-width: 100%;
-        margin-top: 2rem;
-    }
-
-    .page-header h1 {
-        font-size: 2rem;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .filters-container {
-        top: 60px;
-    }
-
-    .category-filters {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 10px;
     }
 }
