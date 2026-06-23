@@ -89,20 +89,21 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
-
-/* Hero Section */
+* Hero Section */
 .hero {
     display: flex;
     align-items: center;
     padding: 4rem 5%;
-    gap: 2rem;
+    gap: 3rem;          /* pehle 2rem tha, 3rem kar do */
     min-height: 80vh;
+    flex-wrap: nowrap;  /* YE LINE ADD KARO */
 }
-
 .hero-content {
     flex: 1;
+ .hero-content {
+    flex: 1;
+    min-width: 400px;  
 }
-
 .hero-content h1 {
     font-size: 3rem;
     line-height: 1.2;
@@ -156,14 +157,15 @@ body {
     margin-right: 8px;
     font-size: 0.9rem;
 }
-
 .hero-image {
     flex: 1;
+    max-width: 600px;   /* YE LINE ADD KARO */
 }
 
 .hero-image img {
     width: 100%;
     border-radius: 16px;
+    object-fit: cover;  /* YE LINE ADD KARO */
 }
 
 /* Services Section */
@@ -258,9 +260,8 @@ footer {
     color: #94a3b8;
     font-size: 0.9rem;
 }
-
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .nav-links, .nav-buttons {
         display: none;
     }
@@ -285,6 +286,11 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: 2rem 5%;
+        min-height: auto;
+    }
+    
+    .hero-content {
+        min-width: auto;
     }
     
     .hero-content h1 {
@@ -293,6 +299,7 @@ footer {
     
     .search-bar {
         flex-direction: column;
+        margin: 0 auto;
     }
     
     .search-bar input, .search-bar button {
@@ -303,7 +310,13 @@ footer {
     .search-bar button {
         margin-top: 0.5rem;
     }
+    
+    .hero-image {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
 }
+
 /* Services Page Styles */
 .page-header {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -487,15 +500,15 @@ footer {
     .page-header h1 {
         font-size: 2rem;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .filters-container {
         top: 60px;
     }
-    
+
     .category-filters {
         justify-content: flex-start;
         overflow-x: auto;
