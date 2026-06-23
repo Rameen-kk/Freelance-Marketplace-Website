@@ -3,115 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillGrid - Hire Top Freelancers</title>
+    <title>SkillGrid - Freelance Services</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Responsive Navbar -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <i class="fas fa-layer-group"></i>
-                <span>SkillGrid</span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Browse Jobs</a></li>
-                <li><a href="#">Find Talent</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <button class="btn-login">Login</button>
-                <button class="btn-signup">Sign Up</button>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+    <header class="navbar">
+        <div class="logo">SkillGrid</div>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
+        <div class="nav-buttons">
+            <button class="btn-login">Log In</button>
+            <button class="btn-signup">Sign Up</button>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <main class="hero">
         <div class="hero-content">
-            <h1>Find The Perfect <span>Freelance Services</span> For Your Business</h1>
-            <p>Millions of people use SkillGrid to turn their ideas into reality. Hire expert freelancers for any job, online.</p>
+            <h1>Find the perfect <span>freelance</span> services for your business</h1>
             <div class="search-bar">
-                <input type="text" placeholder="Search for any service...">
-                <button><i class="fas fa-search"></i> Search</button>
+                <input type="text" id="homeSearchInput" placeholder="Search for any service...">
+                <button id="homeSearchBtn"><i class="fas fa-search"></i> Search</button>
             </div>
             <div class="popular-tags">
                 <span>Popular:</span>
-                <a href="#">Website Design</a>
-                <a href="#">Logo Design</a>
-                <a href="#">Video Editing</a>
+                <a href="#" data-category="web-dev">Website Design</a>
+                <a href="#" data-category="graphic-design">Logo Design</a>
+                <a href="#" data-category="video-editing">Video Editing</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600" alt="Freelancers">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" alt="Freelancers">
         </div>
-    </section>
+    </main>
 
-    <!-- Featured Services Section -->
-    <section class="services">
-        <h2>Popular Professional Services</h2>
+    <section class="popular-services">
+        <h2>Popular Services</h2>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" data-category="graphic-design">
                 <img src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" alt="Graphics">
                 <h3>Graphics & Design</h3>
                 <p>Logo, Brand Style Guides, Web Design</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-category="marketing">
                 <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Digital">
                 <h3>Digital Marketing</h3>
                 <p>SEO, Social Media, Content Marketing</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-category="writing">
                 <img src="https://cdn-icons-png.flaticon.com/512/2282/2282188.png" alt="Writing">
                 <h3>Writing & Translation</h3>
                 <p>Articles, Blog Posts, Proofreading</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-category="video-editing">
                 <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png" alt="Video">
                 <h3>Video & Animation</h3>
                 <p>Video Editing, Animation, Intros</p>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3><i class="fas fa-layer-group"></i> SkillGrid</h3>
-                <p>World's best freelance marketplace for businesses and talent.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="#">About Us</a>
-                <a href="#">Careers</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="#">Blog</a>
-                <a href="#">Help Center</a>
-                <a href="#">Guides</a>
-            </div>
-            <div class="footer-col">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SkillGrid. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
