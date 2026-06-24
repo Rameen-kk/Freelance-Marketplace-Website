@@ -596,3 +596,15 @@ footer {
     .profile-details, .service-details-container { grid-template-columns: 1fr; }
     .pricing-card { position: static; }
 }
+.service-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.service-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.service-item:hover {
+    transform: translateY(-5px);
+}
