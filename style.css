@@ -449,3 +449,150 @@ footer {
         padding-bottom: 10px;
     }
 }
+/* Day 3: Seller Profile & Service Details */
+.seller-profile-container, .service-details-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
+
+.profile-header {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h1 { margin-bottom: 5px; }
+.profile-info h3 { color: #6B7280; font-weight: 400; margin-bottom: 10px; }
+.seller-rating { color: #F59E0B; margin-bottom: 20px; }
+.seller-rating span { color: #6B7280; }
+
+.btn-contact {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.about-section, .portfolio-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-section h2, .portfolio-section h2 { margin-bottom: 20px; }
+.about-section h3 { margin: 25px 0 15px 0; }
+
+.skills-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.skills-tags span {
+    background: #EEF2FF;
+    color: #4F46E5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+.portfolio-grid img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Service Details */
+.service-details-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.service-main, .pricing-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.service-banner {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.service-seller {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+.service-seller img { width: 50px; height: 50px; border-radius: 50%; }
+.service-seller a { font-weight: 600; color: #4F46E5; text-decoration: none; }
+
+.service-description h2 { margin: 30px 0 15px 0; }
+.service-description ul { list-style: none; }
+.service-description li { margin: 10px 0; }
+.service-description li i { color: #10B981; margin-right: 10px; }
+
+.reviews-section { margin-top: 40px; }
+.review-card {
+    border: 1px solid #E5E7EB;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.stars { color: #F59E0B; }
+
+.pricing-card { height: fit-content; position: sticky; top: 100px; }
+.pricing-card h3 { margin-bottom: 20px; }
+.price { font-size: 36px; font-weight: 700; color: #111827; margin-bottom: 20px; }
+.pricing-card p { margin: 15px 0; color: #6B7280; }
+.btn-order, .btn-contact-seller {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-order { background: #4F46E5; color: white; }
+.btn-contact-seller { background: #F3F4F6; color: #111827; }
+
+@media (max-width: 768px) {
+    .profile-header { flex-direction: column; text-align: center; }
+    .profile-details, .service-details-container { grid-template-columns: 1fr; }
+    .pricing-card { position: static; }
+}
