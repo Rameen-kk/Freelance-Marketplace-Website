@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Profile - SkillNest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SkillNest</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="#">Browse Jobs</a></li>
+                <li><a href="#">Find Talent</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="seller-profile-container">
+        <div class="profile-header">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Seller" class="profile-pic">
+            <div class="profile-info">
+                <h1 id="sellerName">Ahmed Khan</h1>
+                <h3 id="sellerTitle">Professional Graphic Designer</h3>
+                <div class="seller-rating">
+                    <i class="fas fa-star"></i> 4.9 <span>(127 reviews)</span>
+                </div>
+                <button class="btn-contact">Contact Me</button>
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <div class="about-section">
+                <h2>About Me</h2>
+                <p id="sellerAbout">5+ years experience in logo design, branding, and social media graphics. Delivered 500+ projects for clients worldwide.</p>
+                
+                <h3>Skills</h3>
+                <div class="skills-tags" id="sellerSkills">
+                    <span>Logo Design</span>
+                    <span>Brand Identity</span>
+                    <span>Photoshop</span>
+                    <span>Illustrator</span>
+                </div>
+
+                <h3>Experience</h3>
+                <p id="sellerExp">Senior Designer at Creative Agency 2020-2024</p>
+            </div>
+
+            <div class="portfolio-section">
+                <h2>Portfolio</h2>
+                <div class="portfolio-grid">
+                    <img src="https://picsum.photos/300/200?random=1" alt="Work 1">
+                    <img src="https://picsum.photos/300/200?random=2" alt="Work 2">
+                    <img src="https://picsum.photos/300/200?random=3" alt="Work 3">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SkillNest. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
