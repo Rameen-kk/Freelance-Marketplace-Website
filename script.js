@@ -99,3 +99,58 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetBtn) targetBtn.click();
     }
 });
+// Contact Form Validation
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Name validation
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Name is required';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').textContent = '';
+            }
+            
+            // Email validation
+            const email = document.getElementById('email').value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').textContent = '';
+            }
+            
+            // Subject validation
+            const subject = document.getElementById('subject').value.trim();
+            if (subject === '') {
+                document.getElementById('subjectError').textContent = 'Subject is required';
+                isValid = false;
+            } else {
+                document.getElementById('subjectError').textContent = '';
+            }
+            
+            // Message validation
+            const message = document.getElementById('message').value.trim();
+            if (message === '') {
+                document.getElementById('messageError').textContent = 'Message is required';
+                isValid = false;
+            } else {
+                document.getElementById('messageError').textContent = '';
+            }
+            
+            if (isValid) {
+                alert('Message sent successfully! We will contact you soon.');
+                contactForm.reset();
+            }
+        });
+    }
+});
