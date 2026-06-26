@@ -721,3 +721,123 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ========== DAY 5: RESPONSIVENESS & ANIMATIONS ========== */
+
+/* 1. MOBILE OPTIMIZATION - Media Queries */
+@media (max-width: 1024px) {
+    .services-grid, .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .services-grid, .team-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .container h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 20px;
+    }
+    .service-content h3 {
+        font-size: 1.1rem;
+    }
+    .btn-submit {
+        padding: 10px 20px;
+    }
+}
+
+/* 2. SCROLL ANIMATIONS + FADE EFFECTS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. SMOOTH TRANSITIONS - Sab ke liye */
+* {
+    transition: all 0.3s ease;
+}
+
+/* 4. HOVER EFFECTS */
+
+/* Buttons Hover */
+button, .btn-submit, .btn-login {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover, .btn-submit:hover, .btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(29, 191, 115, 0.3);
+}
+
+/* Service Cards Hover */
+.service-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Navigation Links Hover */
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #1dbf73;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Social Icons Hover - agar footer me icons hain to */
+.social-icons i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons i:hover {
+    transform: scale(1.2);
+    color: #1dbf73;
+}
+
+/* 5. PERFORMANCE OPTIMIZATION */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
