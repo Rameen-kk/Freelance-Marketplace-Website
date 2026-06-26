@@ -154,3 +154,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// Scroll Animation - Fade In on Scroll
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Fade in animation for all sections
+    const fadeElements = document.querySelectorAll('.service-item, .about-block, .team-member, .contact-form, .contact-info');
+    
+    // Add fade-in class to all elements
+    fadeElements.forEach(el => {
+        el.classList.add('fade-in');
+    });
+    
+    // Intersection Observer for scroll effect
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Sirf ek baar animate ho
+            }
+        });
+    }, {
+        threshold: 0.1 // 10% visible hote hi trigger
+    });
+    
+    // Observe all fade elements
+    fadeElements.forEach(el => {
+        observer.observe(el);
+    });
+
+});
